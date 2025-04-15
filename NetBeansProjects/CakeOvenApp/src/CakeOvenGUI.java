@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package cakeovenapp;
 
 /**
  *
@@ -14,12 +13,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class CakeOvenGUI extends JFrame {
-
-    private final JTextField nameField;
-    private final JTextField weightField;
-    private final JTextField dateField;
-    private final JTextArea displayArea;
-    private final Oven oven = new Oven();
+    private JTextField nameField, weightField, dateField;
+    private JTextArea displayArea;
+    private Oven oven = new Oven();
 
     public CakeOvenGUI() {
         setTitle("Cake Oven");
@@ -52,7 +48,6 @@ public class CakeOvenGUI extends JFrame {
         JButton topCakeButton = new JButton("Top Cake");
         buttonPanel.add(topCakeButton);
 
-
         buttonPanel.add(addButton);
         buttonPanel.add(removeButton);
         buttonPanel.add(showButton);
@@ -71,7 +66,7 @@ public class CakeOvenGUI extends JFrame {
         showButton.addActionListener(e -> showCakes());
         exitButton.addActionListener(e -> System.exit(0));
         topCakeButton.addActionListener(e -> showTopCake());
-
+        
     }
 
     private void addCake() {
@@ -105,6 +100,11 @@ public class CakeOvenGUI extends JFrame {
         displayArea.setText("Please enter the date in the correct format: YYYY-MM-DD.");
     }
 }
+    public static void main(String[] args) {
+        javax.swing.SwingUtilities.invokeLater(() -> {
+        new CakeOvenGUI().setVisible(true);
+    });
+}
     private void removeCake() {
     String result = oven.removeCake();
     displayArea.setText(result);
@@ -119,14 +119,7 @@ public class CakeOvenGUI extends JFrame {
     String result = oven.peekTopCake();
     displayArea.setText(result);
 }
-
-
-    public static void main(String[] args) {
-    javax.swing.SwingUtilities.invokeLater(() -> {
-        new CakeOvenGUI().setVisible(true);
-    });
-} 
 }
 
-    
+
 

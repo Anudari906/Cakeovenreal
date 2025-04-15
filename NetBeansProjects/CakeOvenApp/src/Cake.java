@@ -2,13 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package cakeovenapp;
 
 /**
  *
  * @author anudari
  */
-    public class Cake {
+public class Cake {
     private String name;
     private int weight;
     private String bestBefore;
@@ -26,4 +25,6 @@ package cakeovenapp;
         return name + " - " + weight + "g - Best Before: " + bestBefore + " - Added: " + addedTime;
     }
 }
+
+    
 
