@@ -122,6 +122,7 @@ public class CakeOvenGUI extends JFrame {
     String result = oven.peekTopCake();
     displayArea.setText(result);
     // Added extra detail to the label
+      // Added extra detail to the label
 
 }
 }
